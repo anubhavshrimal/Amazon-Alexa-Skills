@@ -1,10 +1,18 @@
-# Amazon-Alexa-Skill-Famous-Quotes
-Amazon Alexa Skill made using Alexa Skills Kit and AWS Lambda function
+# Amazon-Alexa-Skills
 
-- Used AWS Lambda function to run node.js V6.0 on a server less platform.
-- Code for Lambda function present in [index.js](./index.js).
-- [authors.txt](./authors.txt) is the list of authors used as slot variables for `AUTHOR` {author} custom slot.
-- [utterances.md](./utterances.md) has all the utterances used to build the Voice User Interface of the Alexa Skill.
-- App tested on [https://echosim.io/](https://echosim.io/).
-- Number of quotes = 1600+
-- Number of authors = 600+
+Amazon Alexa Skills made using Alexa Skills Kit and AWS Lambda function
+
+- Famous-Quotes 
+    
+    Tells you quotes of famous people of all time.
+    Gives you more than 1600 quotes by 600+ authors.
+    You can also ask for a quote by a specific author.
+
+    [Amazon Market Link](https://www.amazon.com/Anubhav-Shrimal-Famous-Quotes/dp/B071KLJHJ1)
+
+- Humour-Me 
+    
+    Humour me gives you random funny jokes.
+    You can ask Humour Me for a random joke and it will respond with a joke.
+    
+    [Amazon Market Link]()
