@@ -25,7 +25,7 @@ const languageStrings = {
             LAUNCH_MESSAGE: 'Welcome to Famous Quotes... To listen a quote try saying, inspire me, or, tell me a famous quote by Mahatma Gandhi. what can I help you with?',
             HELP_MESSAGE: "You can say, tell me a famous quote, or you can say, inspire me, or you can say, give me a quote of Abraham Lincoln, or, you can say exit... What can I help you with?",
             HELP_REPROMPT: 'What can I help you with?',
-            STOP_MESSAGE: 'Goodbye! Have a motivated day.',
+            STOP_MESSAGE: 'Goodbye! Have a motivated day.'
         },
     }
 };
@@ -35,6 +35,9 @@ const handlers = {
         const speechOutput = this.t('LAUNCH_MESSAGE');
         const reprompt = this.t('LAUNCH_MESSAGE');
         this.emit(':ask', speechOutput, reprompt, false);
+    },
+    'SessionEndedRequest': function () {
+        console.log('session ended')
     },
     'Getquoteintent': function () {
         this.emit('GetQuote');
@@ -63,7 +66,7 @@ const handlers = {
             const authors = Object.keys(this.t('AUTHORS'));
             const random_author = authors[Math.floor(Math.random() * authors.length)];
             const speechOutput = 'Sorry! ' + author +' is not in my list. Try saying, Tell me a quote by '+ random_author;
-            this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), random_author);
+            this.emit(':ask', speechOutput, speechOutput, false);
         }
         else {
             const quoteIndex = Math.floor(Math.random() * authorQuotes.length);
@@ -83,6 +86,10 @@ const handlers = {
     'AMAZON.StopIntent': function () {
         this.emit(':tell', this.t('STOP_MESSAGE'));
     },
+    'Unhandled': function () {
+        console.log('unhandled')
+        this.emit(':tell', this.t('STOP_MESSAGE'));
+    }
 };
 var e;
 exports.handler = function (event, context) {
