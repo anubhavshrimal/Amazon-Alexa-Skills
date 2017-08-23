@@ -15,4 +15,4 @@ Amazon Alexa Skills made using Alexa Skills Kit and AWS Lambda function
     Humour me gives you random funny jokes.
     You can ask Humour Me for a random joke and it will respond with a joke.
     
-    [Amazon Market Link]()
+    [Amazon Market Link](https://www.amazon.com/Anubhav-Shrimal-Humour-Me/dp/B073Y9T5DZ)
