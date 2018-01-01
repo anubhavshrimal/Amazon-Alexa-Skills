@@ -42,9 +42,16 @@ var handlers = {
             this.attributes['currentLevel'] = parseInt(level) + 1;
             checkUserStatus.call(this);
 
+            if (this.attributes['currentStage'] == "medium" && this.attributes['currentLevel'] == 0){
+                speechOutput += " And you have leveled up to the second round!";
+            }
+            else if (this.attributes['currentStage'] == "hard" && this.attributes['currentLevel'] == 0){
+                speechOutput += " And you have leveled up to the last round!";
+            }
+
             if (this.attributes['currentStage'] == "easy" && parseInt(this.attributes['currentLevel']) == 0) {
                 // if we reach this circle back to the beginning state, they have finished all of the mixes
-                speechOutput += " And you completed all of the space trivia!";
+                speechOutput += " And you completed all of the space trivia. Congratulations!";
             }
 
             speechOutput += " To know a fact related to "+ givenAnswer +", say play fact. To move on, say next question.";
